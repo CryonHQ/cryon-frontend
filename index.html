@@ -1,115 +1,138 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-black text-white">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cryon</title>
-    <!-- Tailwind v3 CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="flex flex-col min-h-screen bg-black text-white font-sans">
 
-    <!-- Header -->
-    <header class="flex items-center justify-between p-4 border-b border-blue-500">
-      <div class="flex items-center gap-2">
-        <img src="logo.png" alt="Cryon Logo" class="h-12 w-auto" />
-        <span class="text-2xl font-bold text-white">CRYON</span>
-      </div>
-      <nav class="space-x-4 text-sm">
-        <a href="#manifesto" class="text-white hover:text-blue-400">Manifesto</a>
-        <a href="#tokenomics" class="text-white hover:text-blue-400">Tokenomics</a>
-        <a href="#roadmap" class="text-white hover:text-blue-400">Roadmap</a>
-        <a href="join.html" class="px-3 py-1 border border-blue-400 text-white hover:text-white hover:bg-blue-600 rounded">Join Airdrop</a>
-      </nav>
-    </header>
-
-    <!-- Hero -->
-    <main class="flex-grow">
-      <section class="text-center py-20 px-6">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">The last currency before the quantum dawn.</h1>
-        <p class="text-lg md:text-xl text-gray-300 mb-6">Cryon is a cryptocurrency designed from ground up to resist quantum attacks.</p>
-        <a href="whitepaper.html" class="inline-block px-6 py-2 border border-blue-400 text-blue-400 rounded hover:bg-blue-600 hover:text-white">
+<html class="bg-black text-white" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cryon</title>
+<!-- Tailwind v3 CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen bg-black text-white font-sans">
+<!-- Header -->
+<header class="flex items-center justify-between p-4 border-b border-blue-500">
+<div class="flex items-center gap-2">
+<img alt="Cryon Logo" class="h-12 w-auto" src="logo.png"/>
+<span class="text-2xl font-bold text-blue-400">CRYON</span>
+</div>
+<nav class="space-x-4 text-sm">
+<a class="text-white hover:text-blue-400" href="#manifesto">Manifesto</a>
+<a class="text-white hover:text-blue-400" href="#tokenomics">Tokenomics</a>
+<a class="text-white hover:text-blue-400" href="#roadmap">Roadmap</a>
+<a class="px-3 py-1 border border-blue-400 text-white hover:text-white hover:bg-blue-600 rounded" href="join.html">Join Airdrop</a>
+</nav>
+</header>
+<!-- Hero -->
+<main class="flex-grow">
+<section class="text-center py-20 px-6">
+<h1 class="text-4xl md:text-5xl font-bold mb-4">The last currency before the quantum dawn.</h1>
+<p class="text-lg md:text-xl text-gray-300 mb-6">Cryon is a cryptocurrency designed from ground up to resist quantum attacks.</p>
+<a class="p-4 border border-blue-500 text-white rounded hover:bg-blue-900 transition" href="whitepaper.html">
           Read Whitepaper
         </a>
-      </section>
-
-      <!-- Manifesto -->
-      <section id="manifesto" class="px-6 py-12 border-t border-blue-500">
-        <div class="md:flex md:items-center md:justify-between gap-8">
-          <div class="md:w-1/2 mb-6 md:mb-0">
-            <h2 class="text-xl font-semibold text-blue-400 mb-2">Manifesto</h2>
-            <p class="text-gray-300 text-lg">
-              Quantum computing will change everything. Existing public-key cryptography will be rendered obsolete.
-              Cryon secures your assets for what comes next.
-            </p>
-          </div>
-          <div class="md:w-1/2 flex justify-center bg-black p-4 rounded">
-            <img src="cryon_tokenomics_final_adjusted.png" alt="Token Distribution" class="w-72 md:w-96" />
-          </div>
-        </div>
-      
 </section>
-
+<section class="px-6 py-12 text-white bg-black border-t border-blue-500">
+<h2 class="text-xl font-semibold mb-8 text-center">Why Cryon?</h2>
+<div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+<div>
+<div class="text-3xl mb-2">🧠</div>
+<p class="font-semibold">Post-quantum cryptography</p>
+<p class="text-sm text-gray-400">Cryon is built from the ground up to resist quantum attacks.</p>
+</div>
+<div>
+<div class="text-3xl mb-2">🔒</div>
+<p class="font-semibold">Immutable &amp; Fast</p>
+<p class="text-sm text-gray-400">Cryon runs a blazing-fast ledger with no compromises.</p>
+</div>
+<div>
+<div class="text-3xl mb-2">💎</div>
+<p class="font-semibold">Clarity &amp; Community</p>
+<p class="text-sm text-gray-400">Built for users — open, focused and transparent.</p>
+</div>
+</div>
+</section>
+<section class="px-6 py-12 text-white bg-black border-t border-blue-500">
+<h2 class="text-xl font-semibold mb-8 text-center">Get Started</h2>
+<div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-6 text-center">
+<a class="p-4 border border-blue-500 rounded hover:bg-blue-900 transition" href="staking.html">🪙 Stake &amp; Earn</a>
+<a class="p-4 border border-blue-500 rounded hover:bg-blue-900 transition" href="airdrop_points.html">🎯 Join the Airdrop</a>
+<a class="p-4 border border-blue-500 rounded hover:bg-blue-900 transition" href="testnet_stats.html">📊 Explore Testnet</a>
+<a class="p-4 border border-blue-500 rounded hover:bg-blue-900 transition" href="cryon_whitepaper.html">📘 Read the Whitepaper</a>
+<a class="p-4 border border-blue-500 rounded hover:bg-blue-900 transition" href="https://x.com/CryonHQ" target="_blank">🌍 Join Cryon Community</a>
+</div>
+</section>
+<!-- Manifesto -->
+<section class="px-6 py-12 border-t border-blue-500" id="manifesto">
+<div class="md:flex md:items-center md:justify-between gap-8">
+<div class="md:w-1/2 mb-6 md:mb-0">
+<h2 class="text-xl font-semibold text-blue-400 mb-2">Manifesto</h2>
+<p class="text-gray-300 text-lg">Quantum computing will change everything. Existing public-key cryptography will be rendered obsolete.
+              Cryon secures your assets for what comes next. Quantum computing will change everything. Existing public-key cryptography will be rendered obsolete.
+              Cryon secures your assets for what comes next. Quantum computing will change everything. Existing public-key cryptography will be rendered obsolete.
+              Cryon secures your assets for what comes next. Quantum computing will change everything. Existing public-key cryptography will be rendered obsolete.
+              Cryon secures your assets for what comes next.</p>
+</div>
+<div class="md:w-1/2 flex justify-center bg-black p-4 rounded">
+<img alt="Token Distribution" class="w-72 md:w-96" src="cryon_tokenomics_final_adjusted.png"/>
+</div>
+</div>
+</section>
 <!-- Key Features -->
 <section class="px-6 py-12 border-t border-blue-500 bg-black">
-  <h2 class="text-xl font-semibold text-white mb-8 text-center">Cryon Highlights</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto text-center">
-    <div class="p-6 border border-blue-400 rounded">
-      <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-2 h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 3v18m9-9H3"/></svg>
-      <h3 class="font-semibold text-white">1,000,000 CRYON</h3>
-      <p class="text-gray-400">Fixed total supply</p>
-    </div>
-    <div class="p-6 border border-blue-400 rounded">
-      <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-2 h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 2L3 6v6c0 5.25 3.75 10 9 12 5.25-2 9-6.75 9-12V6l-9-4z"/></svg>
-      <h3 class="font-semibold text-white">Quantum-Resistant</h3>
-      <p class="text-gray-400">Based on post-quantum cryptography</p>
-    </div>
-    <div class="p-6 border border-blue-400 rounded">
-      <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-2 h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M4.5 12a7.5 7.5 0 0115 0 7.5 7.5 0 01-15 0zm0 0h15"/></svg>
-      <h3 class="font-semibold text-white">BNB Testnet</h3>
-      <p class="text-gray-400">Launched and live</p>
-    </div>
-    <div class="p-6 border border-blue-400 rounded">
-      <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-2 h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M20 12c0 4.418-4 8-8 8s-8-3.582-8-8S12 2 12 2s8 5.582 8 10z"/></svg>
-      <h3 class="font-semibold text-white">Airdrop & Staking</h3>
-      <p class="text-gray-400">Claim rewards by participating</p>
-    </div>
-  </div>
+<h2 class="text-xl font-semibold text-blue-400 mb-8 text-center text-white">Cryon Highlights</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto text-center">
+<div class="p-6 border border-blue-400 rounded">
+<svg class="mx-auto mb-2 h-8 w-8 text-blue-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v18m9-9H3"></path></svg>
+<h3 class="font-semibold text-white">1,000,000 CRYON</h3>
+<p class="text-gray-400">Fixed total supply</p>
+</div>
+<div class="p-6 border border-blue-400 rounded">
+<svg class="mx-auto mb-2 h-8 w-8 text-blue-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L3 6v6c0 5.25 3.75 10 9 12 5.25-2 9-6.75 9-12V6l-9-4z"></path></svg>
+<h3 class="font-semibold text-white">Quantum-Resistant</h3>
+<p class="text-gray-400">Based on post-quantum cryptography</p>
+</div>
+<div class="p-6 border border-blue-400 rounded">
+<svg class="mx-auto mb-2 h-8 w-8 text-blue-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 12a7.5 7.5 0 0115 0 7.5 7.5 0 01-15 0zm0 0h15"></path></svg>
+<h3 class="font-semibold text-white">BNB Testnet</h3>
+<p class="text-gray-400">Launched and live</p>
+</div>
+<div class="p-6 border border-blue-400 rounded">
+<svg class="mx-auto mb-2 h-8 w-8 text-blue-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 12c0 4.418-4 8-8 8s-8-3.582-8-8S12 2 12 2s8 5.582 8 10z"></path></svg>
+<h3 class="font-semibold text-white">Airdrop &amp; Staking</h3>
+<p class="text-gray-400">Claim rewards by participating</p>
+</div>
+</div>
 </section>
-
-      <!-- Tokenomics -->
-
-      <section id="tokenomics" class="px-6 py-12 border-t border-blue-500">
-        <h2 class="text-xl font-semibold text-blue-400 mb-6">Tokenomics</h2>
-        <div class="space-y-4 text-gray-200">
-          <div class="p-4 border border-blue-400 rounded">
-            <strong class="text-blue-300">Q3 2025</strong> – Testnet Launch<br />
-            <span class="text-gray-400">Post-quantum blockchain • Staking with Dilithium signatures</span>
-          </div>
-          <div class="p-4 border border-blue-400 rounded">
-            <strong class="text-blue-300">Q1 2026</strong> – Mainnet Release<br />
-            <span class="text-gray-400">Network security audits • Initiativ public sale</span>
-          </div>
-          <div class="p-4 border border-blue-400 rounded">
-            <strong class="text-blue-300">H2 2026</strong> – Adoption and Growth<br />
-            <span class="text-gray-400">Ecosystem expansion • Exchange listings</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Airdrop Signup -->
-      <section class="text-center py-12 border-t border-blue-500">
-        <h3 class="text-xl font-semibold text-white mb-4">Stay updated – sign up for the airdrop</h3>
-        <form class="flex flex-col sm:flex-row justify-center items-center gap-4 px-4">
-          <input type="email" placeholder="Email address" class="px-4 py-2 rounded bg-gray-900 text-white border border-blue-400 w-64" />
-          <button type="submit" class="px-6 py-2 border border-blue-400 text-blue-400 rounded hover:bg-blue-600 hover:text-white">Submit</button>
-        </form>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="mt-auto text-center text-sm text-gray-500 py-6 border-t border-blue-500">
+<!-- Tokenomics -->
+<section class="px-6 py-12 border-t border-blue-500" id="tokenomics">
+<h2 class="text-xl font-semibold text-blue-400 mb-6">Tokenomics</h2>
+<div class="space-y-4 text-gray-200">
+<div class="p-4 border border-blue-400 rounded">
+<strong class="text-blue-300">Q3 2025</strong> – Testnet Launch<br/>
+<span class="text-gray-400">Post-quantum blockchain • Staking with Dilithium signatures</span>
+</div>
+<div class="p-4 border border-blue-400 rounded">
+<strong class="text-blue-300">Q1 2026</strong> – Mainnet Release<br/>
+<span class="text-gray-400">Network security audits • Initiativ public sale</span>
+</div>
+<div class="p-4 border border-blue-400 rounded">
+<strong class="text-blue-300">H2 2026</strong> – Adoption and Growth<br/>
+<span class="text-gray-400">Ecosystem expansion • Exchange listings</span>
+</div>
+</div>
+</section>
+<!-- Airdrop Signup -->
+<section class="text-center py-12 border-t border-blue-500">
+<h3 class="text-xl font-semibold text-white mb-4">Stay updated – sign up for the airdrop</h3>
+<form class="flex flex-col sm:flex-row justify-center items-center gap-4 px-4">
+<input class="px-4 py-2 rounded bg-gray-900 text-white border border-blue-400 w-64" placeholder="Email address" type="email"/>
+<button class="px-6 py-2 border border-blue-400 text-blue-400 rounded hover:bg-blue-600 hover:text-white" type="submit">Submit</button>
+</form>
+</section>
+</main>
+<!-- Footer -->
+<footer class="mt-auto text-center text-sm text-gray-500 py-6 border-t border-blue-500">
       © 2025 Cryon. Quantum resistance starts here.
     </footer>
-  </body>
+</body>
 </html>
