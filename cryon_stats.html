@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cryon Stats</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!--#include virtual="components/header.html" -->
+    <main>
+        <h1>Testnet Stats</h1>
+        <p>Live metrics from the Cryon testnet:</p>
+        <ul>
+            <li><strong>Wallets:</strong> <span id="walletCount">...</span></li>
+            <li><strong>Transactions:</strong> <span id="txCount">...</span></li>
+            <li><strong>Total Tokens Transferred:</strong> <span id="tokenSum">...</span></li>
+            <li><strong>Top Active Addresses:</strong>
+                <ol id="topAddresses"></ol>
+            </li>
+        </ul>
+    </main>
+    <!--#include virtual="components/footer.html" -->
+</body>
+</html>

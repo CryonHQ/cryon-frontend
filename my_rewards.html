@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cryon – My Rewards</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0d1117;
+      color: #ffffff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    h1 {
+      color: #00c0f5;
+      margin-bottom: 24px;
+    }
+    input[type="text"] {
+      padding: 12px;
+      font-size: 16px;
+      width: 300px;
+      max-width: 100%;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #00c0f5;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      margin-left: 10px;
+    }
+    button:hover {
+      background-color: #009ecc;
+    }
+    .result {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #d1d1d1;
+    }
+    .btn {
+      background-color: #00c0f5;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 40px;
+    }
+    .btn:hover {
+      background-color: #009ecc;
+    }
+  </style>
+</head>
+<body>
+  <h1>My Airdrop Rewards</h1>
+  <input type="text" id="addressInput" placeholder="Enter your address" />
+  <button onclick="fetchRewards()">Check</button>
+  <div class="result" id="result"></div>
+  <a class="btn" href="index.html">Return to Homepage</a>
+
+  <script>
+    async function fetchRewards() {
+      const address = document.getElementById('addressInput').value;
+      const resultDiv = document.getElementById('result');
+      if (!address) {
+        resultDiv.textContent = "Please enter an address.";
+        return;
+      }
+      try {
+        const res = await fetch(`http://localhost:8000/bounty/${address}`);
+        if (!res.ok) {
+          resultDiv.textContent = "Address not found or no rewards.";
+          return;
+        }
+        const data = await res.json();
+        resultDiv.innerHTML = `<strong>${data.address}</strong> has <strong>${data.bounty_points}</strong> airdrop points.`;
+      } catch (err) {
+        resultDiv.textContent = "Error fetching rewards.";
+      }
+    }
+  </script>
+</body>
+</html>

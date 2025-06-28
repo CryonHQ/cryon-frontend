@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cryon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #0e0e0e;
+      color: white;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.25rem;
+      color: #bbb;
+    }
+    .cta {
+      margin-top: 30px;
+    }
+    .cta a {
+      padding: 12px 28px;
+      background: #00c0f5;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+    section {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 15px 0;
+    }
+    li a {
+      color: #00c0f5;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cryon</h1>
+    <p>Quantum-Resistant Testnet Environment</p>
+    <div class="cta">
+      <a href="#">Launch Wallet</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Why Cryon?</h2>
+    <ul>
+      <li>🧠 Post-quantum cryptography by design</li>
+      <li>🔒 Immutable ledger, blazing fast</li>
+      <li>💎 Focused on clarity, community & control</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Get Started</h2>
+    <ul>
+      <li><a href="staking.html">🪙 Stake & Earn</a></li>
+      <li><a href="airdrop_points.html">🎯 Join the Airdrop</a></li>
+      <li><a href="testnet_stats.html">📊 Explore Testnet</a></li>
+      <li><a href="cryon_whitepaper.html">📘 Read the Whitepaper</a></li>
+      <li><a href="join.html">🌍 Join Cryon Community</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 Cryon. Quantum resistance starts here.
+  
+  <section id="claim">
+    <h2>Claim wCRYON</h2>
+    <p>Check if you’re eligible to claim free wCRYON tokens from our community airdrop.</p>
+    <div style="display: flex; gap: 10px; margin-top: 10px;">
+      <input type="text" id="claimAddress" placeholder="Enter your wallet address" style="flex: 1; padding: 8px; border-radius: 4px; border: 1px solid #444;" />
+      <button onclick="checkClaim()" style="padding: 8px 16px; background: #00c0f5; color: black; border: none; border-radius: 4px; font-weight: bold;">Check</button>
+    </div>
+    <div id="claimResult" style="margin-top: 15px; color: #bbb;"></div>
+    <script>
+      async function checkClaim() {
+        const address = document.getElementById('claimAddress').value;
+        const resultDiv = document.getElementById('claimResult');
+        if (!address) {
+          resultDiv.innerText = "Please enter a valid address.";
+          return;
+        }
+        try {
+          const response = await fetch(`/bounty/${address}`);
+          if (!response.ok) throw new Error("Address not found or not eligible.");
+          const data = await response.json();
+          resultDiv.innerHTML = `<strong>${data.address}</strong> is eligible with <strong>${data.bounty_points}</strong> bounty points.<br/>Claiming function will be available soon.`;
+        } catch (err) {
+          resultDiv.innerText = err.message;
+        }
+      }
+    </script>
+  </section>
+
+  
+  <section id="add-liquidity" style="margin-top: 60px;">
+    <h2>Add Liquidity</h2>
+    <p>You can provide liquidity for the wCRYON/BNB pair directly on PancakeSwap.</p>
+    <p style="margin-top: 10px;">
+      <a href="https://pancakeswap.finance/add/BNB/0xYOUR_WCRYON_CONTRACT_ADDRESS" 
+         target="_blank" 
+         style="padding: 10px 20px; background: #00c0f5; color: black; font-weight: bold; border-radius: 5px; text-decoration: none;">
+        Add Liquidity Now
+      </a>
+    </p>
+  </section>
+
+  
+  <section id="token-info" style="margin-top: 60px;">
+    <h2>Token Info</h2>
+    <table style="margin-top: 15px; border-collapse: collapse;">
+      <tr><td style="padding: 5px 15px;">Name:</td><td style="padding: 5px 15px;">Cryon Wrapped Token</td></tr>
+      <tr><td style="padding: 5px 15px;">Symbol:</td><td style="padding: 5px 15px;">wCRYON</td></tr>
+      <tr><td style="padding: 5px 15px;">Total Supply:</td><td style="padding: 5px 15px;">1,000,000</td></tr>
+      <tr><td style="padding: 5px 15px;">Decimals:</td><td style="padding: 5px 15px;">18</td></tr>
+      <tr><td style="padding: 5px 15px;">Contract Address:</td>
+          <td style="padding: 5px 15px; font-family: monospace;">0xYOUR_WCRYON_CONTRACT_ADDRESS</td></tr>
+    </table>
+    <p style="margin-top: 10px; font-size: 0.9em;">The contract will be verified and publicly visible on BscScan.</p>
+  </section>
+
+  
+  <section id="roadmap" style="margin-top: 60px;">
+    <h2>Roadmap</h2>
+    <ul style="margin-top: 15px; line-height: 1.6;">
+      <li><strong>Q2 2025:</strong> Cryon backend + testnet live (wallet, staking, airdrop, leaderboard)</li>
+      <li><strong>Q3 2025:</strong> Deploy wCRYON on BNB Mainnet, add liquidity on PancakeSwap</li>
+      <li><strong>Q3 2025:</strong> Launch marketing, Twitter, Discord, bounty & claim page</li>
+      <li><strong>Q4 2025:</strong> Begin development of native post-quantum Cryon token (Cryon L1)</li>
+      <li><strong>Q1 2026:</strong> Cryon Bridge: swap wCRYON <-> CRYON, testnet of native chain</li>
+      <li><strong>Q2 2026:</strong> Launch Cryon Mainnet (post-quantum native token)</li>
+    </ul>
+  </section>
+
+  </footer>
+</body>
+</html>
