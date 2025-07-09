@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cryon Explorer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0f1a;
+      color: white;
+      padding: 2rem;
+    }
+    h1 {
+      color: #60a5fa;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background-color: #1c2333;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      text-align: center;
+    }
+    .card h2 {
+      font-size: 1.5rem;
+      margin: 0;
+      color: #93c5fd;
+    }
+    .card p {
+      font-size: 1rem;
+      color: #e5e7eb;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cryon Testnet Explorer</h1>
+  <div class="section stats-grid" id="stats-section">
+    <div class="card"><h2 id="wallets">-</h2><p>Wallets</p></div>
+    <div class="card"><h2 id="txs">-</h2><p>Transactions</p></div>
+    <div class="card"><h2 id="total">-</h2><p>Total Transferred</p></div>
+    <div class="card"><h2 id="staked">-</h2><p>Total Staked</p></div>
+  </div>
+
+  <script>
+    async function fetchStats() {
+      try {
+        const statsRes = await fetch('http://localhost:8000/stats');
+        const stats = await statsRes.json();
+        document.getElementById('wallets').innerText = stats.wallets;
+        document.getElementById('txs').innerText = stats.transactions;
+        document.getElementById('total').innerText = stats.total_transferred;
+        document.getElementById('staked').innerText = stats.total_staked;
+      } catch (err) {
+        console.error('Failed to fetch stats:', err);
+      }
+    }
+
+    fetchStats();
+  </script>
+</body>
+</html>
