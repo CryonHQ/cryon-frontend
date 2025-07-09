@@ -54,7 +54,7 @@
   <script>
     async function fetchStats() {
       try {
-        const statsRes = await fetch('http://localhost:8000/stats');
+        const statsRes = await fetch('https://17c1d2bbae99.ngrok-free.app/stats');
         const stats = await statsRes.json();
         document.getElementById('wallets').innerText = stats.wallets;
         document.getElementById('txs').innerText = stats.transactions;
