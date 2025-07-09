@@ -1,39 +1,95 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Cryon - My Airdrop Points</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cryon | Airdrop Points</title>
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding: 40px; }
-    input { padding: 10px; width: 300px; font-size: 16px; margin-right: 10px; }
-    button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
-    #result { margin-top: 30px; font-size: 18px; font-weight: bold; }
+    body {
+      background-color: #0b0f1a;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      color: #00bfff;
+      margin-bottom: 1rem;
+    }
+    form {
+      margin-bottom: 2rem;
+    }
+    input[type="text"] {
+      padding: 0.6rem;
+      font-size: 1rem;
+      width: 300px;
+      max-width: 90%;
+      border-radius: 5px;
+      border: none;
+      margin-right: 10px;
+    }
+    button {
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      background-color: #00bfff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+    }
+    .footer {
+      margin-top: 4rem;
+      border-top: 1px solid #333;
+      padding-top: 2rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    a {
+      color: #00bfff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <h1>Cryon - My Airdrop Points</h1>
-  <input id="addressInput" placeholder="Enter your Cryon address" />
-  <button onclick="getBounty()">Check Points</button>
+  <h1>Cryon Airdrop Points</h1>
+  <form id="airdropForm">
+    <input type="text" id="addressInput" placeholder="Enter your wallet address..." required />
+    <button type="submit">Check Points</button>
+  </form>
+  <div class="result" id="result"></div>
 
-  <div id="result"></div>
+  <div class="footer">
+    <a href="index.html">← Back to homepage</a><br><br>
+    © 2025 Cryon. Quantum resistance starts here.
+  </div>
 
   <script>
-    async function getBounty() {
-      const address = document.getElementById("addressInput").value;
-      if (!address) {
-        document.getElementById("result").innerText = "Please enter an address.";
-        return;
-      }
+    document.getElementById('airdropForm').addEventListener('submit', async function(event) {
+      event.preventDefault();
+      const address = document.getElementById('addressInput').value.trim();
+      const resultDiv = document.getElementById('result');
+      resultDiv.textContent = 'Loading...';
+
       try {
-        const res = await fetch(`http://localhost:8000/bounty/${address}`);
-        if (!res.ok) throw new Error("Address not found");
-        const data = await res.json();
-        document.getElementById("result").innerText = `Address: ${data.address}\nAirdrop Points: ${data.bounty_points}`;
-      } catch (err) {
-        document.getElementById("result").innerText = "Address not found or server error.";
+        const response = await fetch(`/api/bounty/${address}`);
+        if (!response.ok) throw new Error('Address not found or error occurred.');
+        const data = await response.json();
+        resultDiv.textContent = `Airdrop Points for ${address}: ${data.points}`;
+      } catch (error) {
+        resultDiv.textContent = error.message;
       }
-    }
+    });
   </script>
 </body>
 </html>
